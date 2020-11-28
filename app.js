@@ -5,6 +5,24 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var config = require('./config.js');
 
+/* config.js file should include below:
+
+var config = {};
+
+config.slack = {};
+config.thingspeak = {};
+config.sonoff = {};
+
+config.slack.key = 'slack_webhook_key_with_three_parts_seperated_by_forward_slashes';
+config.thingspeak.key = 'thingspeak_key_here';
+config.sonoff.pump_id = 'deviceidfromewelinkapp';
+config.sonoff.phone = 'phone_number_including_country_code_and_+_sign_prepended';
+config.sonoff.password = 'your_password_here';
+config.sonoff.region = 'as/eu/us';
+
+module.exports = config;
+*/
+
 var app = express();
 
 app.use(logger('dev'));
