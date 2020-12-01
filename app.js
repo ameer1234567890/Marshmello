@@ -3,6 +3,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
+var ewelink = require('ewelink-api');
 var config = require('./config.js');
 
 /* config.js file should include below:
@@ -47,7 +48,6 @@ app.get('/fishfeedr', function(req, res) {
     }
 
     // Turn off pump
-    const ewelink = require('ewelink-api');
     (async () => {
         const connection = new ewelink({
             phoneNumber: config.sonoff.phone,
